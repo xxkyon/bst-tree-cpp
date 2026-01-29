@@ -12,13 +12,13 @@ This project is a **C++ program** that implements a **Binary Search Tree (BST)**
 
 The goal of this project is to showcase practical knowledge of **data structures, pointers, recursion, and object-oriented programming in C++**, while also demonstrating how input validation and user interaction can be handled in a clean and structured way.
 
-
+---
 
 #### **Key Features \& Design Decisions**
 
 
 
-###### **1. Student Management**
+#### **1. Student Management**
 
 
 
@@ -34,19 +34,19 @@ The goal of this project is to showcase practical knowledge of **data structures
 
 
 
-&nbsp;	**1.** Update the existing student’s name.
+&nbsp;	###### **1.** Update the existing student’s name.
 
 
 
-&nbsp;	**2.** Cancel the operation and re-enter the ID.
+&nbsp;	###### **2.** Cancel the operation and re-enter the ID.
 
 
 
 This approach ensures data integrity while giving flexibility to handle user mistakes.
-
+---
 ###### 
 
-###### **2. Input Validation (utils.cpp \& utils.h)**
+#### **2. Input Validation (utils.cpp \& utils.h)**
 
 
 
@@ -100,9 +100,9 @@ This approach ensures data integrity while giving flexibility to handle user mis
 
 This validation ensures **clean, consistent data**, while being flexible enough for realistic names.
 
+---
 
-
-###### **3. Binary Search Tree (binaryTree.cpp \& binaryTree.h)**
+#### **3. Binary Search Tree (binaryTree.cpp \& binaryTree.h)**
 
 
 
@@ -136,9 +136,9 @@ This validation ensures **clean, consistent data**, while being flexible enough 
 
 &nbsp;	**3.** Node with two children (in-order successor is used).
 
+---
 
-
-###### **4. Tree Printing**
+#### **4. Tree Printing**
 
 
 
@@ -160,9 +160,9 @@ This validation ensures **clean, consistent data**, while being flexible enough 
 
 This allows visualization of the tree structure and student ordering.
 
+---
 
-
-###### **5. User Interaction (main.cpp)**
+#### **5. User Interaction (main.cpp)**
 
 
 
@@ -193,10 +193,10 @@ This allows visualization of the tree structure and student ordering.
 &nbsp;	• Improves clarity and prevents confusion about previous inputs or outputs.
 
 
-
+---
 ##### 
 
-##### **How to Compile and Run**
+#### **How to Compile and Run**
 
 
 
@@ -209,11 +209,11 @@ This allows visualization of the tree structure and student ordering.
    	*g++ src/\*.cpp -Iinclude -o bst*
 
 
-   • **src/\*.cpp** compiles **all .cpp files** in the **src** folder.
+  ###### • **src/\*.cpp** compiles **all .cpp files** in the **src** folder.
 
-   • **-Iinclude** tells the compiler where to find **header files**.
+  ###### • **-Iinclude** tells the compiler where to find **header files**.
 
-   • **-o bst** generates the **executable** named **bst**.
+  ###### • **-o bst** generates the **executable** named **bst**.
    
 3. **Run** the program:
 
@@ -224,8 +224,8 @@ This allows visualization of the tree structure and student ordering.
 4. Follow the **menu prompts** to manage student records.
 
 ###### 
-
-###### **Example Usage:**
+---
+#### **Example Usage:**
 
 
 
@@ -268,8 +268,8 @@ Type in an option: 2
 André Schiavone: 101
 
 
-
-##### **Potential Improvements**
+---
+#### **Potential Improvements**
 
 
 
@@ -286,3 +286,4 @@ André Schiavone: 101
 
 
 * Improve the user interface with clearer prompts or colors.
+
