@@ -33,11 +33,11 @@ The goal of this project is to showcase practical knowledge of **data structures
 
 
 
-&nbsp;	**1.** Update the existing student’s name.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Update the existing student’s name.
 
 
 
-&nbsp;	**2.** Cancel the operation and re-enter the ID.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	**2.** Cancel the operation and re-enter the ID.
 
 
 
@@ -58,11 +58,11 @@ This approach ensures data integrity while giving flexibility to handle user mis
 
 
 
-&nbsp;	**1.** Spaces (allowing full names)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Spaces (allowing full names)
 
 
 
-&nbsp;	**2.** Accented characters (supports names like "José da Silva")
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Accented characters (supports names like "José da Silva")
 
 
 
@@ -70,11 +70,11 @@ This approach ensures data integrity while giving flexibility to handle user mis
 
 
 
-&nbsp;	**•** Leading and trailing spaces are removed.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**•** Leading and trailing spaces are removed.
 
 
 
-&nbsp;	**•** Consecutive spaces inside the string are reduced to a single space.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**•** Consecutive spaces inside the string are reduced to a single space.
 
 
 
@@ -82,19 +82,19 @@ This approach ensures data integrity while giving flexibility to handle user mis
 
 
 
-&nbsp;	**1.** Iterates over each character in the input.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Iterates over each character in the input.
 
 
 
-&nbsp;	**2.** Tracks whether the last character was a space.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Tracks whether the last character was a space.
 
 
 
-&nbsp;	**3.** Builds a clean version of the string with proper spacing.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**3.** Builds a clean version of the string with proper spacing.
 
 
 
-&nbsp;	**4.** Removes trailing spaces using **pop\_back**.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**4.** Removes trailing spaces using **pop\_back**.
 
 
 
@@ -118,7 +118,7 @@ This validation ensures **clean, consistent data**, while being flexible enough 
 
 
 
-&nbsp;	• The tree will not insert a node if a student with the same ID exists.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• The tree will not insert a node if a student with the same ID exists.
 
 
 
@@ -126,15 +126,15 @@ This validation ensures **clean, consistent data**, while being flexible enough 
 
 
 
-&nbsp;	**1.** Node with no children.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Node with no children.
 
 
 
-&nbsp;	**2.** Node with one child.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Node with one child.
 
 
 
-&nbsp;	**3.** Node with two children (in-order successor is used).
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**3.** Node with two children (in-order successor is used).
 
 
 ---
@@ -147,15 +147,15 @@ This validation ensures **clean, consistent data**, while being flexible enough 
 
 
 
-&nbsp;	• **Pre-order:** Root → Left → Right
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **Pre-order:** Root → Left → Right
 
 
 
-&nbsp;	• **In-order:** Left → Root → Right
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **In-order:** Left → Root → Right
 
 
 
-&nbsp;	• **Post-order:** Left → Right → Root
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **Post-order:** Left → Right → Root
 
 
 
@@ -187,11 +187,11 @@ This allows visualization of the tree structure and student ordering.
 
 
 
-&nbsp;	• Instead of clearing the terminal each time, the menu separates iterations with blank lines and hashtags.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• Instead of clearing the terminal each time, the menu separates iterations with blank lines and hashtags.
 
 
 
-&nbsp;	• Improves clarity and prevents confusion about previous inputs or outputs.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• Improves clarity and prevents confusion about previous inputs or outputs.
 
 
 
