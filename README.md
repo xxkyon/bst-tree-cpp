@@ -1,298 +1,133 @@
-# **Binary Search Tree Student Management (BST)**
-
-
-
-## **Overview**
-
-
-
-This project is a **C++ program** that implements a **Binary Search Tree (BST)** to manage student records. It allows users to insert, remove, search, and update students, as well as print the tree in **pre-order, in-order, and post-order**.
-
-The goal of this project is to showcase practical knowledge of **data structures, pointers, recursion, and object-oriented programming in C++**, while also demonstrating how input validation and user interaction can be handled in a clean and structured way.
+# Binary Search Tree Student Management (BST)
 
 ---
 
+## Overview
 
-## **Key Features \& Design Decisions**
+This project is a **C++ program** that implements a **Binary Search Tree (BST)** to manage student records. Users can insert, remove, search, update students, and print the tree in **pre-order, in-order, and post-order**.
 
+The goal is to showcase practical knowledge of **data structures, pointers, recursion, and object-oriented programming in C++**, while demonstrating clean input validation and user interaction.
 
+---
 
-### **1. Student Management**
-
-
+### 1. Student Management
 
 * Each student has a unique **ID** and a **name**.
+* The tree naturally prevents duplicate IDs, reinforced in **main**.
+* If an ID already exists, the user can:
+  1. Update the existing student’s name.
+  2. Cancel and re-enter the ID.
 
-
-
-* The tree itself naturally prevents duplicate IDs, and this is reinforced in the **main** function.
-
-
-
-* If a user tries to insert a student with an existing ID, the program offers **two options:**
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Update the existing student’s name.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	**2.** Cancel the operation and re-enter the ID.
-
-
-
-This approach ensures data integrity while giving flexibility to handle user mistakes.
-
----
-###### 
-
-### **2. Input Validation (utils.cpp \& utils.h)**
-
-
-
-* **IDs** must be integers. Any non-integer input is rejected.
-
-
-
-* **Names** cannot contain numbers. They can contain:
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Spaces (allowing full names)
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Accented characters (supports names like "José da Silva")
-
-
-
-* **Extra** spaces are automatically normalized:
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**•** Leading and trailing spaces are removed.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**•** Consecutive spaces inside the string are reduced to a single space.
-
-
-
-* This is achieved with a custom **normalizeSpaces** function, which:
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Iterates over each character in the input.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Tracks whether the last character was a space.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**3.** Builds a clean version of the string with proper spacing.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**4.** Removes trailing spaces using **pop\_back**.
-
-
-
-This validation ensures **clean, consistent data**, while being flexible enough for realistic names.
+This ensures **data integrity** while handling user mistakes.
 
 ---
 
-### **3. Binary Search Tree (binaryTree.cpp \& binaryTree.h)**
+### 2. Input Validation (utils.cpp & utils.h)
 
+* **IDs** must be integers. Non-integer input is rejected.
+* **Names** cannot contain numbers, but can include:
+  * Spaces (for full names)
+  * Accented characters (e.g., "José da Silva")
+* Extra spaces are normalized:
+  * Leading and trailing spaces removed
+  * Consecutive internal spaces reduced to one
+* Achieved with a custom **normalizeSpaces** function that:
+  1. Iterates over each character
+  2. Tracks if the last character was a space
+  3. Builds a clean string
+  4. Removes trailing spaces with **pop_back**
 
-
-* Each node stores a **Student** object and has left and right child pointers.
-
-
-
-* Insertion, removal, and search operations follow standard BST logic.
-
-
-
-* **Duplicate IDs are prevented:**
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• The tree will not insert a node if a student with the same ID exists.
-
-
-
-* **Deletion handles three cases:**
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**1.** Node with no children.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**2.** Node with one child.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	**3.** Node with two children (in-order successor is used).
-
+This keeps data **clean and consistent**.
 
 ---
 
-### **4. Tree Printing**
+### 3. Binary Search Tree (binaryTree.cpp & binaryTree.h)
 
-
-
-* The tree can be printed in three orders:
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **Pre-order:** Root → Left → Right
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **In-order:** Left → Root → Right
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• **Post-order:** Left → Right → Root
-
-
-
-This allows visualization of the tree structure and student ordering.
+* Each node stores a **Student** object and left/right child pointers.
+* Standard BST logic for insertion, removal, and search.
+* **Duplicate IDs prevented**.
+* **Deletion handles three cases**:
+  1. Node with no children
+  2. Node with one child
+  3. Node with two children (in-order successor used)
 
 ---
 
-### **5. User Interaction (main.cpp)**
+### 4. Tree Printing
 
+* Print orders supported:
+  * **Pre-order:** Root → Left → Right
+  * **In-order:** Left → Root → Right
+  * **Post-order:** Left → Right → Root
 
+Helps **visualize tree structure** and student ordering.
 
-**Menu-based system with options to insert, remove, search, and print the tree:**
-
-
-
-* Allows **repeated operations** until the user chooses to exit.
-
-
-
-* Enforces **duplicate handling**, as mentioned above.
-
-
-
-* Demonstrates structured input **validation** and **user feedback**.
-
-
-
-* Readable menu output:
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• Instead of clearing the terminal each time, the menu separates iterations with blank lines and hashtags.
-
-
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	• Improves clarity and prevents confusion about previous inputs or outputs.
-
-
-
-##### 
 ---
-### **How to Compile and Run**
 
+### 5. User Interaction (main.cpp)
 
+* Menu-based system for insert, remove, search, and print
+* Repeated operations until exit
+* Handles duplicates as described above
+* Menu output:
+  * Uses blank lines and hashtags to separate iterations
+  * Improves clarity without clearing the terminal
 
-1. Navigate to **the project folder** in the terminal:
+---
 
-   	cd bst-tree-cpp
-   
-2. Compile **all source files together**, specifying the include folder for header files:
+## How to Compile and Run
 
-   	g++ src/\*.cpp -Iinclude -o bst
+1. Navigate to the **project folder** in your terminal:
 
+    cd bst-tree-cpp
 
-   • **src/\*.cpp** compiles **all .cpp files** in the **src** folder.
+2. Compile all source files, including the header folder:
 
-   • **-Iinclude** tells the compiler where to find **header files**.
+    g++ src/*.cpp -Iinclude -o bst
 
-   • **-o bst** generates the **executable** named **bst**.
-   
-3. **Run** the program:
+* `src/*.cpp` → compiles all `.cpp` files in `src/`
+* `-Iinclude` → tells compiler where headers are
+* `-o bst` → generates executable `bst`
 
-   ./bst   *# Linux / macOS*
+3. Run the program:
 
-   bst.exe *# Windows*
+    ./bst      # Linux / macOS
+    bst.exe    # Windows
 
-   
-4. Follow the **menu prompts** to manage student records.
+4. Follow the menu prompts to manage student records.
 
-##### **Example Usage:**
+---
 
+## Example Usage
 
-\###################################
-
+```
+###################################
 Type in 0 to stop the algorithm!
-
 Type in 1 to insert an element!
-
 Type in 2 to remove an element!
-
 Type in 3 to search for an element!
-
 Type in 4 to print the tree!
-<br><br>
 
 Type in an option: 1
-<br><br>
 Type in the student's ID: 101
-<br><br>
 Type in the student's name: André Schiavone
-<br><br>
 Student inserted successfully.
-<br><br>
-<br><br>
-\###################################
-
-Type in 0 to stop the algorithm!
-
-Type in 1 to insert an element!
-
-Type in 2 to remove an element!
-
-Type in 3 to search for an element!
-
-Type in 4 to print the tree!
-<br><br>
 
 Type in an option: 4
-<br><br>
-
 Type in 1 to print in pre-order!
-
 Type in 2 to print in order!
-
 Type in 3 to print in post-order!
-<br><br>
-
 Type in an option: 2
-<br><br>
+
 André Schiavone: 101
+```
 
 ---
 
-### **Potential Improvements**
+## Potential Improvements
 
+* Extend name validation for additional special characters
+* Implement file I/O to save/load student data
+* Add sorting by name or other criteria
+* Improve UI with clearer prompts or colors
 
-
-* Extend name validation to allow other special characters if needed.
-
-
-
-* Implement file I/O to save/load student data.
-
-
-
-* Add sorting by name or other criteria.
-
-
-
-* Improve the user interface with clearer prompts or colors.
